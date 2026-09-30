@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEMES DAILY | Easy Skiza Activation</title>
+<meta name="description" content="MEMES DAILY - Easy Skiza tune activation.">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7f8;color:#17202a}
+header{background:#111827;color:#fff;padding:22px 18px;text-align:center}
+.logo{font-size:28px;font-weight:800;letter-spacing:1px}.tag{margin-top:6px;color:#cbd5e1}
+main{max-width:760px;margin:0 auto;padding:24px 16px 50px}
+.hero{text-align:center;padding:18px 0 12px}.hero h1{margin:0 0 8px;font-size:28px}.hero p{margin:0;color:#64748b}
+.card{background:#fff;border-radius:18px;padding:20px;margin:16px 0;box-shadow:0 6px 22px rgba(15,23,42,.08)}
+.tune{font-size:21px;font-weight:800;margin-bottom:8px}.code{color:#64748b;margin-bottom:18px}
+.btn{display:block;width:100%;border:0;border-radius:12px;padding:14px 16px;text-align:center;text-decoration:none;font-size:17px;font-weight:800;cursor:pointer}
+.activate{background:#16a34a;color:#fff}.activate:hover{background:#15803d}
+.note{font-size:13px;color:#64748b;line-height:1.5;margin-top:12px}
+footer{text-align:center;color:#64748b;font-size:13px;padding:20px}
+</style>
+</head>
+<body>
+<header><div class="logo">MEMES DAILY</div><div class="tag">Easy Skiza Activation</div></header>
+<main>
+<section class="hero">
+<h1>Activate Your Skiza Tune</h1>
+<p>Select a tune below and tap ACTIVATE.</p>
+</section>
+<div id="tunes"></div>
+</main>
+<footer>© 2026 MEMES DAILY</footer>
+<script>
+const tunes = [
+  ["Kafariki","8371386"],
+  ["Si Pombe Ni Maji","8371387"],
+  ["Waongo","8371388"],
+  ["Mwanayuthi","8371389"],
+  ["Kanisani","8371390"]
+];
+
+function card(name, code){
+  const sms = encodeURIComponent("SKIZA " + code);
+  return `<article class="card">
+    <div class="tune">${name}</div>
+    <div class="code">Skiza Code: <strong>${code}</strong></div>
+    <a class="btn activate" href="sms:811?body=${sms}">ACTIVATE</a>
+    <div class="note">Tapping ACTIVATE prepares the official Skiza SMS: <strong>SKIZA ${code}</strong> to <strong>811</strong>. Your phone may ask you to confirm sending the SMS.</div>
+  </article>`;
+}
+document.getElementById("tunes").innerHTML = tunes.map(t => card(t[0],t[1])).join("");
+</script>
+</body>
+</html>
